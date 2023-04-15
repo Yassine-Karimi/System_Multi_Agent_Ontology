@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="XMLCodec">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/COMPRESS/XMLCodec.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/COMPRESS/RDFCodec.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/COMPRESS/jadeSecurity.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
