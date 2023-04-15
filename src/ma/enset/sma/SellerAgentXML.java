@@ -1,7 +1,6 @@
 package ma.enset.sma;
 
 import jade.content.lang.Codec;
-import jade.content.lang.sl.SLCodec;
 import jade.content.lang.xml.XMLCodec;
 import jade.content.onto.Ontology;
 import jade.content.onto.OntologyException;
@@ -9,14 +8,14 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.lang.acl.ACLMessage;
 
-public class SellerAgent extends Agent {
+public class SellerAgentXML extends Agent {
     private Ontology catalogOntology=CatalogOntology.getCatalogOntology();
-    private Codec codec= new SLCodec();
+    private XMLCodec xmlCodec= new XMLCodec();
 
     @Override
     protected void setup() {
       getContentManager().registerOntology(catalogOntology);
-      getContentManager().registerLanguage(codec);
+      getContentManager().registerLanguage(xmlCodec);
 
       Usb usb=new Usb();
       usb.setName("SAMSUNG A30");
@@ -30,7 +29,7 @@ public class SellerAgent extends Agent {
         ACLMessage message=new ACLMessage(ACLMessage.QUERY_IF);
         message.addReceiver(new AID("buyer",AID.ISLOCALNAME));
         message.setOntology(catalogOntology.getName());
-        message.setLanguage(codec.getName());
+        message.setLanguage(xmlCodec.getName());
         try {
             getContentManager().fillContent(message,disponible);
             send(message);
